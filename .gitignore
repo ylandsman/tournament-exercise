@@ -1,0 +1,5 @@
+# Idea
+.idea
+.env
+**/*.iml
+vendor

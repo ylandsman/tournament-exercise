@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  php:
+    container_name: ${APP_COMPOSE_PROJECT_NAME}_php
+    image: docker.local/${CI_PROJECT_PATH}/php${PHP_VER}-dev:${CI_COMMIT_REF_SLUG}
+    env_file:
+      - .env
+    user: 1000:1000
+    volumes:
+      - ~/.composer/cache/:/.composer_cache/:rw
+      - .:/app:rw
+    working_dir: /app
+
