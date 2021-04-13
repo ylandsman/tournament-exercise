@@ -1,0 +1,13 @@
+includes:
+	- vendor/phpstan/phpstan-phpunit/extension.neon
+
+parameters:
+	parallel:
+	    jobSize: 20
+	    maximumNumberOfProcesses: 32
+	    minimumNumberOfJobsPerProcess: 2
+	    processTimeout: 100.0
+	checkGenericClassInNonGenericObjectType: false
+	checkMissingIterableValueType: false
+	ignoreErrors:
+	    - '#Unsafe usage of new static\(\).#'
