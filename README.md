@@ -4,6 +4,7 @@
 ## Stack
 
 - PHP 8.0
+- Docker
 
 ## Task
 
