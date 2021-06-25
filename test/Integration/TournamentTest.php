@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace Tournament\Test\Integration;
 
 use PHPUnit\Framework\TestCase;
+use Tournament\Highlander;
 use Tournament\Swordsman;
+use Tournament\Viking;
 
 /**
  * This is a duel simulation

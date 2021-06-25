@@ -290,8 +290,8 @@ return [
     // This is useful for excluding groups of test or example
     // directories/files, unanalyzable files, or files that
     // can't be removed for whatever reason.
-    // (e.g. `'@Test\.php$@'`, or `'@vendor/.*/(tests|Tests)/@'`)
-    'exclude_file_regex' => '@^vendor/.*/(tests?|Tests?)/@',
+    // (e.g. `'@Test\.php$@'`, or `'@vendor/.*/(test|Test)/@'`)
+    'exclude_file_regex' => '@^vendor/.*/(test?|Test?)/@',
 
     // A file list that defines files that will be excluded
     // from parsing and analysis and will not be read at all.

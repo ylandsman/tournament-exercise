@@ -1,4 +1,4 @@
- UserBalance service
+UserBalance service
 ============
 
 ## Stack
@@ -8,8 +8,8 @@
 
 ## Task
 
-Please assume that you are writing business production ready code.
-The goal of this exercise is to check problem solving skills, so final goal is not just green tests but clean problem field solution.
+Please assume that you are writing business production ready code. The goal of this exercise is to check problem solving
+skills, so final goal is not just green tests but clean problem field solution.
 
 ## Project Setup
 
@@ -35,12 +35,13 @@ Validate composer config
 
 Full test circle
 
-`make test`
+`make test` - requires fix for tests path to ./test/
 
 Execute tests:
 
-`tests-unit` 
-`tests-integration`
+`make tests-unit` - there no Unit tests on the moment
+
+`make tests-integration`
 
 Static code analysis:
 
@@ -62,7 +63,8 @@ PHPStan focuses on finding errors in your code without actually running it.
 
 `make phpstan`
 
-Phan is a static analyzer for PHP that prefers to minimize false-positives. Phan attempts to prove incorrectness rather than correctness.
+Phan is a static analyzer for PHP that prefers to minimize false-positives. Phan attempts to prove incorrectness rather
+than correctness.
 
 `make phan`
 

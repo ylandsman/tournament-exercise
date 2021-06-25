@@ -8,13 +8,12 @@
   convertWarningsToExceptions="true"
   processIsolation="false"
   stopOnFailure="false"
-  syntaxCheck="true"
   bootstrap="test/bootstrap.php"
 >
 
     <testsuites>
-        <testsuite name="Main Suite">
-            <directory suffix="Test.php">test/src</directory>
+        <testsuite name="integration">
+            <directory>test/Integration</directory>
         </testsuite>
     </testsuites>
 
