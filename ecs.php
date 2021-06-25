@@ -6,7 +6,6 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(__DIR__ . '/vendor/symplify/easy-coding-standard/config/set/clean-code.php');
-    $containerConfigurator->import(__DIR__ . '/vendor/symplify/easy-coding-standard/config/set/php71.php');
     $containerConfigurator->import(__DIR__ . '/vendor/symplify/easy-coding-standard/config/set/psr12.php');
     $parameters = $containerConfigurator->parameters();
     $parameters->set('skip', []);

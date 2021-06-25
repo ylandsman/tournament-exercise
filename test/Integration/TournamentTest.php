@@ -19,7 +19,7 @@ class TournamentTest extends TestCase
      * A Swordsman has 100 hit points and use a 1 hand sword that does 5 dmg
      * A Viking has 120 hit points and use a 1 hand axe that does 6 dmg
      */
-    public function testSwordsmanVsViking()
+    public function testSwordsmanVsViking(): void
     {
         $swordsman = new Swordsman();
         $viking = new Viking();
@@ -34,7 +34,7 @@ class TournamentTest extends TestCase
      * a buckler cancel all the damages of a blow one time out of two
      * a buckler is destroyed after blocking 3 blow from an axe
      */
-    public function testSwordsmanWithBucklerVsVikingWithBuckler()
+    public function testSwordsmanWithBucklerVsVikingWithBuckler(): void
     {
         $swordsman = (new Swordsman())->equip("buckler");
         $viking = (new Viking())->equip("buckler");
@@ -50,7 +50,7 @@ class TournamentTest extends TestCase
      * a Great Sword is a two handed sword deliver 12 damages, but can attack only 2 every 3)(attack ; attack ; no attack)
      * an armor : reduce all received damages by 3 & reduce delivered damages by one
      */
-    public function testArmoredSwordsmanVsViking()
+    public function testArmoredSwordsmanVsViking(): void
     {
         $highlander = new Highlander();
         $swordsman = (new Swordsman())
@@ -69,7 +69,7 @@ class TournamentTest extends TestCase
      * a veteran Highlander goes Berserk once his hit points are under 30% of his initial total
      * once Berserk, he doubles his damages
      */
-    public function testViciousSwordsmanVsVeteranHighlander()
+    public function testViciousSwordsmanVsVeteranHighlander(): void
     {
         $swordsman = (new Swordsman("Vicious"))
             ->equip("axe")
