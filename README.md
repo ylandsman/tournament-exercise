@@ -1,4 +1,4 @@
-UserBalance service
+Tournament exercise
 ============
 
 ## Stack
