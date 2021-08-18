@@ -5,14 +5,12 @@
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config file:///app/vendor/vimeo/psalm/config.xsd"
     cacheDirectory="vendor/vimeo/psalm/.cache/"
+    allowStringToStandInForClass="true"
 >
     <projectFiles>
         <directory name="src" />
         <ignoreFiles>
             <directory name="vendor" />
-            <directory name="src/Infrastructure/Migrations" />
-            <directory name="src/Presentation/Cli/Command" />
-            <file name="src/Domain/Factory/ValueObjectFactory.php" />
         </ignoreFiles>
     </projectFiles>
 

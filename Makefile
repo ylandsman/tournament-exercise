@@ -29,14 +29,15 @@ composer-outdated: ## Show outdated project dependencies
 
 .PHONY: composer-validate
 composer-validate: ## Validate composer config
-		docker-compose run --rm --no-deps php sh -lc 'composer validate --no-check-publish'
+	
+	docker-compose run --rm --no-deps php sh -lc 'composer validate --no-check-publish'
 
 .PHONY: composer
 composer: ## Execute composer command
 	docker-compose run --rm --no-deps php sh -lc "composer $(RUN_ARGS)"
 
 .PHONY: test static-analysis coding-standards tests-integration composer-validate
-test: build static-analysis coding-standards tests-integration composer-validate stop ## Run all test suites
+test: build psalm coding-standards tests-integration composer-validate stop ## Run all test suites
 
 .PHONY: lint
 lint: ## checks syntax of PHP files
@@ -46,7 +47,7 @@ lint: ## checks syntax of PHP files
 .PHONY: coding-standards
 coding-standards: ## run check and validate code standards tests
 	docker-compose run --rm --no-deps php sh -lc './vendor/bin/ecs check src test'
-#	docker-compose run --rm --no-deps php sh -lc './vendor/bin/phpmd src/ text phpmd.xml' #todo: uncomment when phpmd supports php8.0
+	docker-compose run --rm --no-deps php sh -lc './vendor/bin/phpmd src/ text phpmd.xml' 
 
 .PHONY: coding-standards-fixer
 coding-standards-fixer: ## run code standards fixer
@@ -60,11 +61,11 @@ tests-integration: ## Run integration-tests suite
 
 .PHONY: infection
 infection: ## executes mutation framework infection
-	docker-compose run --rm --no-deps php-fpm sh -lc './vendor/bin/infection --min-msi=70 --min-covered-msi=80 --threads=$(JOBS) --coverage=var/report'
+	docker-compose run --rm --no-deps php sh -lc './vendor/bin/infection --min-msi=70 --min-covered-msi=80 --threads=$(JOBS) --coverage=var/report'
 
 .PHONY: phpstan
 phpstan: ## phpstan - PHP Static Analysis Tool
-	docker-compose run --rm --no-deps php sh -lc './vendor/bin/phpstan analyse -l 6 -c phpstan.neon src tests'
+	docker-compose run --rm --no-deps php sh -lc './vendor/bin/phpstan analyse -l 6 -c phpstan.neon src test'
 
 .PHONY: psalm
 psalm: ## psalm is a static analysis tool for finding errors in PHP applications
